@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 
     <style>
-        body, * {
+        body,
+        * {
             font-family: 'Poppins', sans-serif;
         }
     </style>
@@ -44,7 +45,7 @@
                             <span class="hide-menu">Home</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/') }}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -53,38 +54,38 @@
                         </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">UI COMPONENTS</span>
+                            <span class="hide-menu">Algorithm</span>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-article"></i>
+                                    <i class="ti ti-settings"></i>
                                 </span>
-                                <span class="hide-menu">Buttons</span>
+                                <span class="hide-menu">Settings</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-alert-circle"></i>
+                                    <i class="ti ti-table"></i>
                                 </span>
-                                <span class="hide-menu">Alerts</span>
+                                <span class="hide-menu">Datasets</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-cards"></i>
+                                    <i class="ti ti-grain"></i>
                                 </span>
-                                <span class="hide-menu">Card</span>
+                                <span class="hide-menu">K-Means</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-file-description"></i>
+                                    <i class="ti ti-device-analytics"></i>
                                 </span>
-                                <span class="hide-menu">Forms</span>
+                                <span class="hide-menu">Analytics Chart</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -92,12 +93,12 @@
                                 <span>
                                     <i class="ti ti-typography"></i>
                                 </span>
-                                <span class="hide-menu">Typography</span>
+                                <span class="hide-menu">Dokumentasi</span>
                             </a>
                         </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">AUTH</span>
+                            <span class="hide-menu">Manajement</span>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
@@ -110,29 +111,9 @@
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-user-plus"></i>
+                                    <i class="ti ti-user"></i>
                                 </span>
-                                <span class="hide-menu">Register</span>
-                            </a>
-                        </li>
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">EXTRA</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-mood-happy"></i>
-                                </span>
-                                <span class="hide-menu">Icons</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-aperture"></i>
-                                </span>
-                                <span class="hide-menu">Sample Page</span>
+                                <span class="hide-menu">User</span>
                             </a>
                         </li>
                     </ul>
@@ -155,18 +136,22 @@
                                 <i class="ti ti-menu-2"></i>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                                <i class="ti ti-bell-ringing"></i>
-                                <div class="notification bg-primary rounded-circle"></div>
-                            </a>
+                        <li class="nav-item d-none d-sm-block">
+                            <nav aria-label="breadcrumb">
+                                <ol class="mb-0 breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ $title ?? 'Dashboard' }}
+                                    </li>
+                                </ol>
+                            </nav>
                         </li>
                     </ul>
                     <div class="px-0 navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="flex-row navbar-nav ms-auto align-items-center justify-content-end">
-                            <div>
+                            <div class="d-none d-lg-block">
                                 <p class="m-0 fw-bolder">Adi Aulia Rahman</p>
-                                <div style="font-size: 12px; margin-top: -5px" class="text-end text-primary">Administrator</div>
+                                <div style="font-size: 12px; margin-top: -5px" class="text-end text-primary">
+                                    Administrator</div>
                             </div>
                             <li class="nav-item dropdown">
                                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
