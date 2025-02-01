@@ -65,7 +65,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('datasets') }}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-table"></i>
                                 </span>
@@ -137,13 +137,7 @@
                             </a>
                         </li>
                         <li class="nav-item d-none d-sm-block">
-                            <nav aria-label="breadcrumb">
-                                <ol class="mb-0 breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">{{ $title ?? 'Dashboard' }}
-                                    </li>
-                                </ol>
-                            </nav>
+                            @include('_components.breadcrumb')
                         </li>
                     </ul>
                     <div class="px-0 navbar-collapse justify-content-end" id="navbarNav">
