@@ -42,10 +42,11 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Home</span>
+                            <span class="hide-menu">Main</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ url('/') }}" aria-expanded="false">
+                            <a class="sidebar-link {{ Request::is('/') ? 'active' : null }}" href="{{ url('/') }}"
+                                aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -54,7 +55,7 @@
                         </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Algorithm</span>
+                            <span class="hide-menu">Options</span>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
@@ -65,7 +66,20 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ url('datasets') }}" aria-expanded="false">
+                            <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-typography"></i>
+                                </span>
+                                <span class="hide-menu">Dokumentasi</span>
+                            </a>
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Locations</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link {{ Request::is('datasets') ? 'active' : null }}"
+                                href="{{ url('datasets') }}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-table"></i>
                                 </span>
@@ -73,7 +87,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('kmeans/result') }}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-grain"></i>
                                 </span>
@@ -86,14 +100,6 @@
                                     <i class="ti ti-device-analytics"></i>
                                 </span>
                                 <span class="hide-menu">Analytics Chart</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-typography"></i>
-                                </span>
-                                <span class="hide-menu">Dokumentasi</span>
                             </a>
                         </li>
                         <li class="nav-small-cap">
@@ -137,7 +143,8 @@
                             </a>
                         </li>
                         <li class="nav-item d-none d-sm-block">
-                            @include('_components.breadcrumb')
+                            {{-- @include('_components.breadcrumb') --}}
+                            @yield('breadcrumb')
                         </li>
                     </ul>
                     <div class="px-0 navbar-collapse justify-content-end" id="navbarNav">
@@ -187,7 +194,7 @@
     </div>
     <script src="{{ asset('/') }}assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="{{ asset('/') }}assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('/') }}assets/js/sidebarmenu.js"></script>
+    {{-- <script src="{{ asset('/') }}assets/js/sidebarmenu.js"></script> --}}
     <script src="{{ asset('/') }}assets/js/app.min.js"></script>
     <script src="{{ asset('/') }}assets/libs/simplebar/dist/simplebar.js"></script>
 </body>
